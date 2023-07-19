@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ES">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width"> 
+        <title> Rollbacks </title>
+        <link rel = "stylesheet" href="reset.css">
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <div class = "Titulo">
+                <h1><img src = "images/titulo.png" alt="Guia moderacion servers mc "></h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Menu</a></li>
+                    <li><a href="restoreopeninv.html">Restaurar / Abrir Inventarios</a></li>
+                    <li><a href="coreprotect.html">Rollbacks e Inspeccion</a></li>
+                    <li><a href="advancedbans.html">Muteos y Baneos</a></li>
+                    <li><a href="morecommands.html">Comandos adicionales</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main class="cajaMain">
+            <h2 class = "TituloPrincipal"><img src="images/coreprotect.png"></h2>
+            <p>Para saber con que bloques, cofres, puertas, etc. Un jugador a tenido interacciones (romper bloques, colocar bloques, agarrar cosas, dejas cosas o abrir puertas) eso lo podemos saber con el plugin llamado coreprotect</p>
+            <p>Para acceder a todos los comandos de este pluign usamos /co </p>
+            <h4>Sintaxis de comandos:</h4>
+            <br>
+            <h4>/co i:</h4>
+            <p>Entramos en modo de inspección, cada bloque con el que interactuemos nos dará información de este bloque con horas exactas, para desactivar este modo solo ingresa el comando de nuevo. Forma abreviada del comando /co inspect</p>
+            <br>
+            <img class= "imagen2"src="images/Logs.png">
+            <br>
+            <br>
+            <h4>CRITERIOS DE COREPROTECT</h4>
+            <br>
+            <p class = "warning"> &#9888 Presta mucha atención, pues coreprotect es algo complejo &#9888</p>
+            <h4>usuario</h4>
+            <p>Es al jugador que se van a revisar sus logs.</p>
+            <br>
+            <h4>action: </h4>
+            <p>Es la acción que vamos a revisar en específico y los criterios a destacar son:</p>
+            <ul class="listaRepo">
+                <li>+block: bloques colocados</li>
+                <li>-block: bloques quitados</li>
+                <li>kill: entidades matadas </li>
+                <li>+item: item agarrado</li>
+                <li>-item: item dropeado</li>
+            </ul>
+            <h4>time:</h4>
+            <p>El tiempo máximo con el que se va a revisar las interacciones del usuario con el entorno los criterios de entrada son un numero acompañado de una medida de tiempo donde: </p>
+            <ul class="listaRepo">
+                <li>s: segundos</li>
+                <li>m: minutos</li>
+                <li>h: horas</li>
+                <li>d: dias </li>
+                <li>w: semanas</li>
+            </ul>
+            <br>
+            <h4>include:</h4>
+            <p>La tag del bloque específico que vamos a buscar en todos sus logs, es decir si buscamos solo bloques de tag "ancient_debris" solo nos proporcionará la lista con estos bloques ningún otro</p>
+            <br>
+            <h4>exclude:</h4>
+            <p>La tag del bloque específico que vamos a EXCLUIR en todos sus logs, es decir si buscamos solo bloques de tag "dirt" solo nos proporcionará la lista de todos los bloques e interacciones menos de la tag "dirt" </p>
+            <br>
+            <h4>radius:</h4>
+            <p>El radio de bloques en especifico que se revisará, a su ves este permite entrada de tags por mundo </p>
+            <ul class="listaRepo">
+                <li>#global: tres dimensiones overworld, nether y end</li>
+                <li>#world: solo dimensión del overworld</li>
+                <li>#world-nether: solo dimensión del nether</li>
+                <li>#world-end: solo dimensión del end </li>
+            </ul>
+            <img class="imagen" src="images/lookupcriterios.png">
+            <br>
+            <br>
+            <h4>/co rollback:</h4>
+            <p>Deshacer acciones, es decir volver los bloques o cofres a su estado anterior, por ejemplo si queremos hacer un rollback de una sala de cofres por que el usuario: EG_49 robó los cofres hace una hora ejecutaremos este comando: </p>
+            <br>
+            <br>
+            <p>/co rollback EG_49 radius: 10 time: 1h</p>
+            <br>
+            <br>
+            <p class = "warning"> &#9888 Cuidado con los rollbacks pues estos pueden afectar el progreso de un jugador &#9888</p>
+            <br>
+            <br>
+            <h4>/co lookup:</h4>
+            <p>Revisar con que bloques interaccionó un jugador, o solo saber que interacciones han tenido ciertos bloques, por ejemplo si queremos revisar solo los jugadores que han minado "ancient_debris" en un día </p>
+            <br>
+            <br>
+            <p>/co lookup include: ancient_debris time: 1d</p>
+            <br>
+            <p>Este es un ejemplo de rollback exitoso, nos podemos fijar por que está tachado las interacciones de esa persona en ese cofre exacto</p>
+            <br>
+            <img class="imagen2"src = "images/rollbackexitoso.png">
+
+
+
+
+        </main>
+        <footer>
+            <p>Creado por: EG_49</p>
+            <p>Créditos a: Doc, Ewan Howel y los creadores de los plugins</p>
+        </footer>   
+    </body>
+   
+</html>
